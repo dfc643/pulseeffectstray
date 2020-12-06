@@ -1,24 +1,33 @@
-PulseEffectsTray 0.1
+PulseEffectsTray 0.2
 
-This is some kind of quick'n'dirty stand-alone add-on for PulseEffects by Wellington Wallace:
+### 更新日志 20201206
+by 深度论坛 @dfc643
+* 修复 Deepin 上无法启动的问题
+* 托盘界面图标美化更匹配系统外观
+* 程序界面汉化
+* 除去停用后台服务功能（防止手贱）
+* 添加卸载脚本
+
+### 原说明翻译
+这是惠灵顿·华莱士（Wellington Wallace）制作的PulseEffects的一种快速切换软件，简单的独立附件：
 
 https://github.com/wwmm/pulseeffects
 
-It creates a GTK3 status icon in the taskbar (tray) to toggle bypass state on left-click and offering a menu to select from the available presets for in- and outputs on right-click.
-Additionally the icon and PulseEffects can be killed.
+它将在任务栏（托盘）中创建一个GTK3状态图标，以在单击鼠标左键时切换旁路状态，并提供一个菜单以从可用的预置中选择鼠标右键输入和输出。
+另外，图标和PulseEffects可以被杀死。
 
-It requires Python3 and GTK3 (`python3-gi` on Debian based OS) for python. Make the file `pulseeffectstray` executable:
+它需要用于Python的Python3和GTK3（在基于Debian的操作系统上为`python3-gi`）。使文件`pulseeffectstray`可执行：
 
 ```
-chmod a+x pulseeffects
+chmod a+x pulseeffectstray
 ```
 
-And execute it.
+并执行它。
 
-Alternatively run the script `install.sh` as root to install the script to `/usr/local/bin`, the icon to `usr/share/pixmaps` and the application starter to `/usr/share/applications`. This makes the tray icon available in application menus.
+或者以root用户身份运行脚本“ install.sh”，将脚本安装到“/usr/local/bin”，将图标安装到“ usr/share/pixmaps”，将应用程序启动器安装到“/usr/share/applications”。这样可使托盘图标在应用程序菜单中可用。
 
-The PNGs are not required on run-time since graphics data is base64 encoded in the script itself. So most minimal setup is to just have the executable lying around somewhere.
+在运行时不需要PNG，因为图形数据在脚本本身中是base64编码的。因此，最起码的设置是将可执行文件放在某个地方。
 
-If you have PulseEffects >= v4.7.4 installed, the icon can be used to toggle visibility of the window instead of toggling bypass. To make use of this feature, make sure to run the pulseeffects daemon (argument `--gapplication-service`) and start pulseeffectstray with the argument `-h`.
+如果您安装了PulseEffects> = v4.7.4，则可以使用该图标来切换窗口的可见性，而不必切换旁路。要使用此功能，请确保运行pulseeffects守护程序（参数--gapplication-service），并使用参数 -h 启动Pulseeffectstray。
 
-If you'd like to bypass PulseEffects on click in hide-to-tray mode, create a fresh preset called `Bypass`, disable all signal processors and save the settings to the preset. It will appear in the tray icons menu then.
+如果您要在“隐藏到工作间”模式下单击以绕过 PulseEffects，请创建一个名为 “Bypass” 的全新预设，禁用所有信号处理器并将设置保存为该预设。然后它将出现在任务栏图标菜单中。

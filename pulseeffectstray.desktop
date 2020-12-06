@@ -1,9 +1,10 @@
 [Desktop Entry]
-Name=PulseEffectsTray
+Categories=Audio;
 Comment=A tray icon to be used together with PulseEffects
 Exec=pulseeffectstray
-Icon=/usr/share/pixmaps/pulseeffectstray.png
+Icon=/usr/share/pixmaps/pulseeffectstray.svg
+Name=音效切换
+StartupNotify=false
 Terminal=false
 Type=Application
-StartupNotify=false
-Categories=AudioVideo;
+X-Deepin-Vendor=user-custom
