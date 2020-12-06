@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Audio;
+Comment=A tray icon to be used together with PulseEffects
+Exec=AppRun
+Icon=pulseeffectstray
+Name=音效切换
+StartupNotify=false
+Terminal=false
+Type=Application
+X-Deepin-Vendor=user-custom

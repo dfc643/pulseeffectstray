@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ ! -f /usr/bin/python3 ]
+then
+    /usr/bin/zenity --error --width=240 --text="您的系统缺少 python3 运行环境"
+    exit -127
+fi
+
+/usr/bin/python3 ${APPDIR}/pulseeffectstray
+
+
