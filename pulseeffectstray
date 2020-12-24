@@ -1,27 +1,29 @@
 #!/usr/bin/env python3
 
-ACTIVE = """iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAA
-A4ElEQVRYhe3WO04CUQCGUWJp2ILJLMHKenoaVuAa7LVgB0hDTYsU2tj72I
-CdDQnsQGopDgWEXCEoE++dm+h85WSS/yTzbLWamn4Zphiii3YOQNgSr7jBB
-U7qBuy2wASXuQDb/gXgBdd4xmcOwF1w7BQdDPBeF2D8zTlndQAmyUYaQHYA
-CvQxCwbvUSYHWH9kPvZfLXvFB+D8iOGkgKcKgMfY40WFcXiLDSh/nPzaPDd
-gFBtQ9RJcRQVsEFVuwiIF4NjHsBd9PEB0rf/tDjVKNh4gCtxivhld4AFl8v
-GmP98Kq3ow54OS3dAAAAAASUVORK5CYII="""
+ACTIVE = b"""iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0A
+AABVklEQVRYhe2WvUoDQRSFv/WPVCkkWNjYCAbtbOwsLewsfBKRtHZibac
+PEF/Awk5TiIUggiiojSAqiIg2YgIei50Vi+zMZHbYQveD29295zBz752Fi
+or/TuJKkORKWQNWgTbQAR6BF6D3I5Lky4x4mHRRBxZMAFwBh8AxcANcA6/
+B1SW5YkP5vEnat9UfCnbmRx1YLsvABbANnANdIGueL9tHMXog4wFYN4KTw
+JKJ2bIMZPSAO2DXxJgtOeYVJPQf625ZBoIIuYJRYJi0yT5xNJmLQU6gAbS
+AM9LF8gxsAjNFDDgxy2ZK0pFl4UjSgaRav2Vlw+cEasAWsOjIC5ooHwNzp
+I+NiwnPegMbmPbMGydtzugGfDklnYroBm7xG7UTfv0DRMN09p5jAu4lNfO
+e7KIGsjHs5Ii/S1rJE49lAEkNSS1Jl5I+JD1J2pE0bxMvbKCi4s/zDaVoS
+vlxNfZKAAAAAElFTkSuQmCC"""
 
 
-INACTIVE = """iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0A
-AAB3klEQVRYhe3Vu2sUURTH8TNGLXTL4KMQUuQPiCBa2CxWQS3SRv8FsbG0
-EdTKRhuJhSApFSRgpRY+IpjCNILaCApilUAURIkYPxYzG8Zxdh7ZDTb7g9O
-cex7fuXPuvREjjZQTNq1FznvcxAw6bWsnxaDNheSvpSqAfMVfEbEUEQ8j4l
-FEvEqS5HdV7b4ALVSV9DUiHkfEg4iY/x8AeW32ygPsKASdjIgPEbEeEcsRc
-aYIua3Cin/1EkfyQ1Swnp7jIp7hZ0md+gHHakkibOA29pUAXMN33M359uAU
-buBdG4CrfQB6WsMF7CpAHMj8/XbpUFOAMczVQMAbTFc0rLQqgJ6dyJrU6T4
-mtwMgsBPns22v0g9cQWfYAD0bxy3pIFbpE2aRDBugZ4fxogYCFrPYoQNE9n
-Wz+FwDsSEd5vFBAaYwj70Ff0f639drQNZwTjpPWwJ4mhV6jeMl65NYqIEgP
-VHdtgATJYWeZLtSjJ3G2wYgcxhrCtCtKHRPevvl43dLb8O6Y3t5GADwTfoO
-FPMOSt+Nfsd2dZBfUKZlHC0BOSZ9SYta2coQNtH+kvwEZ7EkPTEfcboNwFT
-D5pdKcge7iHK+GXypaH6nxQe1B8j8E7iebaEMaAHd/tWa1R5ppD+Go50hrM
-tcDgAAAABJRU5ErkJggg=="""
+INACTIVE = b"""iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr
+0AAABrklEQVRYhe2WwUsUYRyGn01d9ySxSlehJIJuXbp462Q3DxIevOm1S
+4SEB7v1B0QEdhaDDkFQsJCgHkSig8qWYB0DRQhJpKjIp8N+q6Ps7ny7zV5
+sX/gYZubl+z3fN+/8ZqCjjv535dIMaprlHjAGLAArwA7wFfh9XCRXv0x3B
+GSa+oCbYQBsAUvAKvAJ2Ab2W55dTRsPra9v6utG819okmcReANcjvT3Abe
+zBOgHRoAy8ADIA+/CvTLwGNgAfgHV8Bw1WeO0zmx3Xp1Rv4ctLqvD6qT6R
+O1Ve9RBdUp9oX7IEqA6rqilAHGkPlOLalcNb74dANUxru4EkD11Qs2d9bU
+TAPWi+lT9E0DeqldjAZoNIUAPUAB6w/kdKsEbBjaBW+E4m/C0rsRKBtTpE
+Lwf6oH6SJ0PK7+rdqv31cNwbT2rRzCoLtdsNScqqYWE/5X6MguAgvo8pbj
+qYgIgOoQxGbhO5WOTpkuR8zUNMBTpKwJd7QCI1XvgZzsAPhPXz9dI/ANkp
+sgQflGv1Qpglq/hSp3iB+poveJZASQb0UcrjWhXnVNvNCr+zwAddXTu9Rd
+b+pn7LfCXkgAAAABJRU5ErkJggg=="""
 
 import re
 import os
@@ -30,11 +32,19 @@ import sys
 import signal
 import base64
 import subprocess
+import time
+import locale
+
+from PyQt5 import QtCore, QtWidgets, QtGui
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 import gi
-gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk, GdkPixbuf, GLib, Gio
+gi.require_version('Gio', '2.0')
+from gi.repository import Gio
 
+
+#__tray_icon__
 class Icon ():
     
     icon = False
@@ -43,91 +53,84 @@ class Icon ():
     has_bypass = False
     
     def __init__ (self):
-        stream_active = Gio.MemoryInputStream.new_from_bytes(GLib.Bytes(base64.b64decode(ACTIVE)))
-        stream_inactive = Gio.MemoryInputStream.new_from_bytes(GLib.Bytes(base64.b64decode(INACTIVE)))
-        self.image_active = GdkPixbuf.Pixbuf.new_from_stream(stream_active)
-        self.image_inactive = GdkPixbuf.Pixbuf.new_from_stream(stream_inactive)
+        self.image_active = QBase64Icon(ACTIVE)
+        self.image_inactive = QBase64Icon(INACTIVE)
         
-        self.icon = Gtk.StatusIcon()
-        self.icon.set_visible(True)
-        self.icon.connect("popup-menu", self.rightclick)
-        self.icon.connect("activate", self.leftclick)
+        self.icon = QSystemTrayIcon()
+        self.icon.setIcon(self.image_active)
+        self.icon.setVisible(True)
+        self.icon.setContextMenu(self.rightclick())
+        self.icon.activated.connect(self.leftclick)
         
         self.hidetotray = False
         if len(sys.argv) > 1 and sys.argv[1] == '-h':
             self.set_icon(False)
             self.hidetotray = True
         else:
-            out = subprocess.getoutput('pulseeffects -b 3')
+            out = subprocess.getoutput('pulseeffects -b 3 2>&1 | grep "^[0-9]$"')
             if re.match(r"[0-1]", out):
                 self.has_bypass = True
                 self.set_icon(self.get_bypass())
             else:
                 self.set_icon(False)
     
+    def closeEvent(self, event):
+        """Ignore all ways of closing"""
+        event.ignore()
+        
+        
+    def openmixer (self, icon):
+        os.system("pulseeffects &")
+    
+    
     def quit (self, icon):
         os.system("pulseeffects -q")
+        Nofitication(i18n_quitmsg)
         
-    def rightclick (self, icon, button, time):
-        self.menu = Gtk.Menu()
         
+    def rightclick (self):
+        menu = QMenu()
         presets = self.presetlist()
         outs = presets[0]
         ins = presets[1]
         
-        self.add_presets(outs, "Output Presets:", self.menu)
+        self.add_presets(outs, i18n_playback, menu)
+        menu.addSeparator()
+        self.add_presets(ins, i18n_record, menu)
+        menu.addSeparator()
         
-        sep = Gtk.SeparatorMenuItem()
-        self.menu.append(sep);
+        act_openui = menu.addAction(i18n_openmixer)
+        act_openui.triggered.connect(self.openmixer)
+        act_quit = menu.addAction(i18n_quit)
+        act_quit.triggered.connect(self.quit)
+        menu.addSeparator()
         
-        self.add_presets(ins, "Input Presets:", self.menu)
-        
-        sep = Gtk.SeparatorMenuItem()
-        self.menu.append(sep);
-        
-        '''
-        qpe = Gtk.MenuItem()
-        qpe.set_label("停止音效服务")
-        qpe.connect("activate", self.quit)
-        self.menu.append(qpe)
-        '''
-        
-        qicon = Gtk.MenuItem()
-        qicon.set_label("关闭托盘图标")
-        qicon.connect("activate", kill)
-        self.menu.append(qicon)
+        act_quit = menu.addAction(i18n_kill)
+        act_quit.triggered.connect(kill)
+        return menu
 
-        self.menu.show_all()
-        self.menu.popup(None, None, None, self.icon, 0, time)
         
-    def leftclick (self, icon):
-        if self.hidetotray:
-            out = subprocess.getoutput("wmctrl -l|awk '{$3=\"\"; $2=\"\"; $1=\"\"; print $0}'|grep \"^   PulseEffects\"")
-            if out.strip() == "PulseEffects":
-                os.system('pulseeffects -h')
-            else:
-                os.system('pulseeffects')
-        else:
-            if self.has_bypass:
-                self.toggle_bypass()
-            else:
-                self.rightclick(icon, 0, Gtk.get_current_event_time())
+    def leftclick (self, event):
+        if event == QSystemTrayIcon.ActivationReason.Trigger \
+            and self.has_bypass:
+            self.toggle_bypass()
+    
     
     def add_presets(self, presets, title, menu):
         if not len(presets):
             return
-        titem = Gtk.MenuItem()
-        titem.set_label(title)
-        titem.set_sensitive(False)
-        menu.append(titem)
+        lbl_preset = menu.addAction(title)
+        lbl_preset.setEnabled(False)
         for p in presets:
-            pitem = Gtk.MenuItem()
-            pitem.set_label(p)
-            pitem.connect("activate", self.load_preset)
-            menu.append(pitem)
+            act_preset = menu.addAction(p)
+            act_preset.triggered.connect(lambda checked, name=p: self.load_preset(name))
     
-    def load_preset(self, widget):
-        os.system('pulseeffects -l "%s"' % widget.get_label())
+    
+    def load_preset(self, name):
+        CheckBackend()
+        os.system('pulseeffects -l "%s"' % name)
+        Nofitication(i18n_switched % name)
+        
         
     def presetlist (self):
         out = subprocess.getoutput('pulseeffects -p 2>&1| grep -i "presets:"')
@@ -142,15 +145,18 @@ class Icon ():
             pre.append(arr)
         return pre
         
+
     def set_icon (self, bypass):
         if bypass:
-            self.icon.set_from_pixbuf(self.image_inactive)
+            self.icon.setIcon(self.image_inactive)
         else:
-            self.icon.set_from_pixbuf(self.image_active)
+            self.icon.setIcon(self.image_active)
+            
             
     def get_bypass (self):
-        out = subprocess.getoutput('pulseeffects -b 3')
+        out = subprocess.getoutput('pulseeffects -b 3 2>&1 | grep "^[0-9]$"')
         return out == "1"
+        
         
     def set_bypass (self, bypass):
         if bypass: s = "1"
@@ -158,17 +164,91 @@ class Icon ():
         os.system('pulseeffects -b %s' % s)
         self.set_icon(bypass)
         
+        
     def toggle_bypass (self):
         bypass = not self.get_bypass()
         self.set_bypass(bypass)
         return bypass
         
-        
+
+#__check_pulseeffects_backend__
+def CheckBackend():
+    ps = subprocess.getoutput("ps -ef")
+    backend = ps.find("pulseeffects --gapplication-service")
+    if backend == -1:
+        print("Backend not in Running");
+        os.system("pulseeffects --gapplication-service &")
+
+
+#__qt_base64_icon__
+def QBase64Icon(base64):
+    pixmap = QtGui.QPixmap()
+    pixmap.loadFromData(QtCore.QByteArray.fromBase64(base64))
+    icon = QtGui.QIcon(pixmap)
+    return QIcon(icon)
+
+
+#__gtk_desktop_notification__
+def Nofitication(message):
+    Application = Gio.Application.new("com.xretia.petray", Gio.ApplicationFlags.FLAGS_NONE)
+    Application.register()
+    Notification = Gio.Notification.new(i18n_title)
+    Notification.set_body(message)
+    Icon = Gio.ThemedIcon.new("dialog-information")
+    Notification.set_icon(Icon)
+    Application.send_notification(None, Notification)
+    return True
+
+#__quit_tray__
 def kill(obj1, obj2 = False):
-    Gtk.main_quit()
-    
+    app.exit();
+
+
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal.SIG_IGN)
     signal.signal(signal.SIGINT, kill)
+    
+    language = locale.getdefaultlocale()[0]
+    print(language)
+    if language == "zh_CN":
+        i18n_title      = "音效控制"
+        i18n_playback   = "播放音效"
+        i18n_record     = "录制音效"
+        i18n_openmixer  = "打开音效控制台 ..."
+        i18n_quit       = "停止音效服务"
+        i18n_kill       = "关闭托盘图标"
+        i18n_switched   = "音效已切换至：%s"
+        i18n_quitmsg    = "音效服务已停止，切换预设可再次开启"
+    elif language == "zh_TW":
+        i18n_title      = "音效控制"
+        i18n_playback   = "播放音效"
+        i18n_record     = "錄製音效"
+        i18n_openmixer  = "打開音效控制台 ..."
+        i18n_quit       = "停止音效服務"
+        i18n_kill       = "關閉託盤圖標"
+        i18n_switched   = "音效已切換至：%s" 
+        i18n_quitmsg    = "音效服務已停止，切換預設可再次開啟 "
+    elif language == "ja_JP":
+        i18n_title      = "オーディオエフェクト"
+        i18n_playback   = "再生効果"
+        i18n_record     = "録音効果"
+        i18n_openmixer  = "エフェクトコンソールを開く ..."
+        i18n_quit       = "効果サービスを停止"
+        i18n_kill       = "システムトレイを終了"
+        i18n_switch     = "効果「%s」に切り替えられました"
+        i18n_quitmsg    = "エフェクトサービスが停止しました。プリセットを切り替えるには、再びオンにする"
+    else:
+        i18n_title      = "PulseEffects Tray"
+        i18n_playback   = "Playback"
+        i18n_record     = "Recording"
+        i18n_openmixer  = "Open Mixer ..."
+        i18n_quit       = "Stop PulseEffects Service"
+        i18n_kill       = "Exit PulseEffects Tray"
+        i18n_switched   = "Preset switched to: %s"
+        i18n_quitmsg    = "The sound effect service has stopped. To switching preset can be turned on again"
+    
+    app = QApplication(sys.argv)
     icon = Icon()
-    Gtk.main()
+    CheckBackend()
+    sys.exit(app.exec_())
+    
